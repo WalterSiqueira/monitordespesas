@@ -22,9 +22,14 @@ public class DespesaController {
     @Autowired
     private DespesaService despesaService;
 
-    @GetMapping("/{usuarioId}")
-    public List<Despesa> listarDespesas(@PathVariable Long usuarioId) {
-        return despesaService.ListarDespesasPorUsuario(usuarioId);
+    @GetMapping("/usuario/{usuarioEmail}")
+    public List<Despesa> listarDespesasUsuario(@PathVariable String usuarioEmail) {
+        return despesaService.ListarDespesasPorUsuario(usuarioEmail);
+    }
+
+    @GetMapping("/categoria/{categoriaNome}")
+    public List<Despesa> listarDespesasCategoria(@PathVariable String categoriaNome) {
+        return despesaService.ListarDespesasPorCategoria(categoriaNome);
     }
 
     @PostMapping

@@ -10,7 +10,7 @@ import com.projects.walter.monitordespesas.entities.Categoria;
 import com.projects.walter.monitordespesas.services.CategoriaService;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/api/categoria")
 public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;

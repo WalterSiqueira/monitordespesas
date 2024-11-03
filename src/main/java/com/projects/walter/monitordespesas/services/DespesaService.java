@@ -13,8 +13,12 @@ public class DespesaService {
     @Autowired
     private DespesaRepository despesaRepository;
 
-    public List<Despesa> ListarDespesasPorUsuario(Long usuarioId) {
-        return despesaRepository.findByUsuarioId(usuarioId);
+    public List<Despesa> ListarDespesasPorUsuario(String usuarioEmail) {
+        return despesaRepository.findByUsuarioEmail(usuarioEmail);
+    }
+
+    public List<Despesa> ListarDespesasPorCategoria(String categoriaNome) {
+        return despesaRepository.findByCategoriaNome(categoriaNome);
     }
 
     public Despesa criarDespesa(Despesa despesa) {
